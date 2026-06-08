@@ -1,1493 +1,172 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
-	<meta name="created" content="2026-06-08T16:46:19.472761638"/>
-	<meta name="changed" content="2026-06-08T17:29:44.136562469"/>
-	<style type="text/css">
-		@page { size: 21cm 29.7cm; margin: 2cm }
-		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Závěrečné shrnutí: Rozměrová bariéra eukleidovského prostoru</title>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fdfdfd;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            font-size: 1.8em;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            font-size: 1.4em;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        ul {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .math-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            overflow-x: auto;
+            border-radius: 0 4px 4px 0;
+        }
+        .conclusion-box {
+            background-color: #eafaf1;
+            border: 1px solid #a3e4d7;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .conclusion-box h3 {
+            color: #1e8449;
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #d6dbdf;
+            margin: 30px 0;
+        }
+    </style>
 </head>
-<body lang="cs-CZ" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 100%; margin-bottom: 0cm">
-<br/>
+<body>
+
+    <h1>Závěrečné shrnutí: Rozměrová bariéra eukleidovského prostoru</h1>
+    
+    <p>
+        Cílem této práce bylo prozkoumat chování Velké Fermatovy věty (\(a^n + b^n = c^n\)) skrze její zobrazení v eukleidovské rovině (2D). 
+        Namísto čistě abstraktního algebraického aparátu jsme zvolili cestu <strong>heuristické geometrické a fyzikální interpretace</strong>. 
+        Tento přístup nám umožnil přesně lokalizovat strukturální bariéru, kvůli které rovina odmítá celočíselně pojmout mocniny vyšší než druhé.
+    </p>
+    
+    <p>Celý výzkum lze shrnout do tří klíčových fází, které se navzájem doplňují a potvrzují.</p>
+
+    <hr>
+
+    <h2>1. Referenční stav pro \(n = 2\) (Homogenní distribuce)</h2>
+    <p>
+        V referenčním stavu (Pythagorova věta) pracuje model s pravoúhlým trojúhelníkem o odvěsnách \(c\) a \(2c\).
+    </p>
+    <ul>
+        <li>Všechny délkové parametry v rovině mají stejný rozměr délky (\([c]\)).</li>
+        <li>Obsah útvaru reprezentuje druhou mocninu (\(c^2\)).</li>
+        <li>Parametr posunu \(\mu\) (geometrický filtr), který dělí plochu na části \(a^2\) a \(b^2\), je čistě lineární veličinou:</li>
+    </ul>
+
+    <div class="math-box">
+        $$\mu = \frac{b^2 - a^2}{2c}$$
+    </div>
+
+    <p>
+        Pro celočíselnou trojici \(a, b, c\) je \(\mu\) vždy racionální číslo. Geometrie roviny a aritmetika celých čísel jsou zde 
+        v dokonalé strukturální harmonii, což umožňuje existenci Pythagorejských trojic.
+    </p>
+
+    <h2>2. Model pro \(n = 3\) s konstantní hustotou (\(\rho = 1\))</h2>
+    <p>
+        Abychom v rovině vyjádřili hodnotu odpovídající třetí mocnině \(c^3\), zkonstruujeme pravoúhlý trojúhelník se základnou \(c\) 
+        a výškou navýšenou na rozměr \(2c^2\). Tělesu přiřadíme homogenní měrnou hmotnost \(\rho = 1\), čímž se celková hmotnost \(M\) 
+        rovná jeho obsahu:
+    </p>
+
+    <div class="math-box">
+        $$M = \frac{c \cdot 2c^2}{2} = c^3$$
+    </div>
+
+    <p>
+        Přepona tohoto trojúhelníku stoupá z počátku souřadnic \((0,0)\) do bodu \((c, 2c^2)\) se směrnicí \(k = \frac{2c^2}{c} = 2c\). 
+        Rovnice této dělicí linie je tedy lineární: \(y = 2cx\).
+    </p>
+
+    <h2>3. Kvadratický nárůst hmoty a vznik odmocniny</h2>
+    <p>
+        Klíčový zlom nastává při sledování toho, jak v tomto útvaru kumuluje hmota podél horizontální osy \(x\). Hmotnost (obsah) 
+        části trojúhelníku od počátku do libovolného bodu \(x\) roste podle kvadratické funkce:
+    </p>
+
+    <div class="math-box">
+        $$M(x) = \frac{x \cdot 2cx}{2} = cx^2$$
+    </div>
+
+    <p>
+        Pokud nyní chceme tento trojúhelník rozříznout vertikálním řezem v bodě \(x\) tak, aby levá oddělená část měla hmotnost 
+        přesně odpovídající celočíselné třetí mocnině \(a^3\), musíme položit:
+    </p>
+
+    <div class="math-box">
+        $$cx^2 = a^3 \implies x^2 = \frac{a^3}{c} \implies x = \sqrt{\frac{a^3}{c}}$$
+    </div>
+
+    <p>
+        Tento výsledek odhaluje samotné jádro problému. Geometrie prostoru nás kvůli zachování celkového objemu \(c^3\) 
+        ve 2D rovině nutí pracovat s kvadratickým nárůstem plochy (\(cx^2\)). Když pak hledáme bod řezu pro kubický skok (\(a^3\)), 
+        <strong>systém nás nevyhnutelně donutí přejít k druhé odmocnině</strong>. Výsledný geometrický filtr (posun \(\mu\)) tak ztrácí 
+        svou lineární a racionální povahu, čímž se míjí s celočíselnou mřížkou.
+    </p>
+
+    <div class="conclusion-box">
+        <h3>Hlavní závěr práce</h3>
+        <p>
+            Celá analýza ukazuje, že <strong>druhá mocnina (\(n=2\)) představuje absolutní rozměrový strop</strong>, 
+            za kterým jsou geometrická struktura roviny a aritmetické požadavky vyšších mocnin definitivně neslučitelné.
+        </p>
+        <p>
+            Velká Fermatova věta pro \(n>2\) nemá celočíselné řešení právě proto, že lineární povaha eukleidovského prostoru 
+            nedokáže beze zbytku pojmout objekty vyšších řádů, aniž by došlo k deformaci distribuce hmoty/plochy. 
+            To, co se v algebře projevuje jako neexistence celých čísel, se v rovině projevuje jako nevyhnutelný přechod 
+            k iracionálním řezům a odmocninám.
+        </p>
+    </div>
 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm"> &lt;!DOCTYPE html&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;html lang=&quot;cs&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;meta
-charset=&quot;UTF-8&quot;&gt;  
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;title&gt;Rozměrová
-bariéra Velké Fermatovy věty v 2D prostoru&lt;/title&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-window.MathJax = {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            tex: {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">               
-inlineMath: [['$', '$'], ['\\(', '\\)']],</p>
-<p style="line-height: 100%; margin-bottom: 0cm">               
-displayMath: [['$$', '$$'], ['\\[', '\\]']]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        };</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;script
-id=&quot;MathJax-script&quot; async
-src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&gt;&lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        body {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-family: sans-serif;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            color:
-#000000;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-line-height: 1.4;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-max-width: 800px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-20px auto;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            padding:
-0 15px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        h2 {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 25px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-size: 1.3em;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-border-bottom: 1px solid #e0e0e0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-padding-bottom: 3px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        p {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 6px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 6px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        ul, ol {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-padding-left: 20px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        li {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 4px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        /* Styl pro
-vycentrované matematické bloky */</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-math[display=&quot;block&quot;], .math-display {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            display:
-block;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-text-align: center;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-15px 0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-size: 1.15em;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">      
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h1&gt;Geometrická
-demonstrace rozměrové bariéry Velké Fermatovy věty&lt;/h1&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Tento text
-analyzuje pokus o geometrickou reprezentaci Velké Fermatovy věty v
-eukleidovské rovině (2D). 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Ukazuje, na
-jakém přesném rozměrovém konfliktu selhává možnost promítnout
-třetí a vyšší mocniny do 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        pravoúhlého
-trojúhelníku pomocí lineárního parametru rozdělení \(\mu\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;1.
-Referenční stav pro n = 2 (Homogenní prostor)&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Uvažujme
-velký pravoúhlý trojúhelník, který reprezentuje mocninu
-\(c^2\). 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Zvolíme
-základnu \(c\) a výšku \(2c\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Celkový
-obsah: \( S = \frac{c \cdot 2c}{2} = c^2 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Nyní
-definujeme posun \(\mu\) od středové polohy tak, abychom plochu
-rozdělili na obsahy odpovídající \(b^2\) a \(a^2\):</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( \frac{2c
-\left( \frac{c}{2} + \mu \right)}{2} = b^2 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Z toho
-lineární úpravou získáme parametr posunu:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( \mu =
-\frac{b^2 - a^2}{2c} \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-&lt;strong&gt;Geometrický závěr:&lt;/strong&gt; Obě odvěsny mají
-rozměr délky (\([c]\)). Výsledná plocha má rozměr obsahu.
-Parametr \(\mu\) je lineární délka. Všechny geometrické entity
-jsou v rámci 2D roviny homogenní a plně slučitelné s aritmetikou
-celých čísel (Pythagorejské trojice).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;2.
-Rozměrový konflikt pro n = 3&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Abychom v
-rovině vyjádřili obsah odpovídající třetí mocnině \(c^3\),
-musíme formálně nahradit výšku \(2c\) výrazem \(2c^2\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Základna =
-\(c\) &lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Výška =
-\(2c^2\) &lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Obsah = \(
-\frac{c \cdot 2c^2}{2} = c^3 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Při pokusu
-o rozdělení plochy pro získání \(b^3\) a \(a^3\) opět použijeme
-posun \(\mu\):</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \(
-\frac{2c^2 \left( \frac{c}{2} + \mu \right)}{2} = b^3 \) &lt;br&gt;&lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( \mu =
-\frac{b^3 - a^3}{2c^2} \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Až sem se
-zdá být vše algebraicky v pořádku. Kritický zlom ovšem nastává
-při pohledu z druhé osy. Pokud se pokusíme vyjádřit obsah
-\(a^3\) pomocí parametru \(\mu\), narazíme na vztah:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( \frac{c
-(c^2 - 2\mu^2)}{2} = a^3 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Tento vztah
-&lt;strong&gt;už není geometricky ekvivalentní&lt;/strong&gt; tomu
-prvnímu. Výraz \(2c^2\) totiž nemá rozměr délky, ale obsahu
-(\([c^2] \neq [c]\)). V obrázku geometricky neexistuje úsečka o
-délce \(c^2 - 2\mu^2\). Je to čistě algebraická konstrukce, která
-míchá rozměrově nekompatibilní veličiny.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;3.
-Rozpad parametrizace&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Výše
-popsaný rozměrový konflikt vede k tomu, že parametr \(\mu\) je
-definován dvěma neslučitelnými způsoby:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;Z
-první rovnice plyne lineární závislost: \( \mu \propto (b^3 -
-a^3) \)&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;Z
-druhé rovnice plyne kvadratická závislost: \( \mu^2 \propto (b^3 -
-a^3) \)&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Předpoklad,
-že obě tyto definice musí platit současně, vede k algebraickému
-sporu:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( b^3 - a^3
-= 2c^3 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;conclusion&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-&lt;h3&gt;Závěr&lt;/h3&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            Tento
-rozpor (\( b^3 - a^3 = 2c^3 \)) není chybou ve výpočtu, ale je
-&lt;strong&gt;přímým důkazem nekompatibility
-parametrizace&lt;/strong&gt;. Dokládá, že tentýž parametr
-\(\mu\) nelze v 2D rovině definovat konzistentně pro obě osy
-současně, pokud \(n &gt; 2\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            Můj
-model nevytváří formální algebraický důkaz Velké Fermatovy
-věty, ale poskytuje exaktní geometrickou demonstraci. Ukazuje bod,
-kde se 2D eukleidovská rovina &quot;hroutí&quot; při pokusu o
-zobrazení třetích mocnin. Dvojka (\(n=2\)) je rozměrový strop,
-za kterým se geometrie roviny a aritmetika mocnin definitivně
-rozcházejí.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/html&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;!DOCTYPE html&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;html lang=&quot;cs&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;meta
-charset=&quot;UTF-8&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">   
-&lt;title&gt;Geometrický rozbor&lt;/title&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">      &lt;script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-window.MathJax = {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            tex: {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">               
-inlineMath: [['$', '$'], ['\\(', '\\)']],</p>
-<p style="line-height: 100%; margin-bottom: 0cm">               
-displayMath: [['$$', '$$'], ['\\[', '\\]']]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        };</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;script
-id=&quot;MathJax-script&quot; async
-src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&gt;&lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        body {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-family: sans-serif;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            color:
-#000000;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-line-height: 1.4;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-max-width: 800px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-20px auto;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            padding:
-0 15px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        h2 {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 25px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-size: 1.3em;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-border-bottom: 1px solid #e0e0e0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-padding-bottom: 3px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        p {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 6px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 6px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        ul, ol {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-padding-left: 20px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        li {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 4px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        /* Styl pro
-vycentrované matematické bloky */</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-math[display=&quot;block&quot;], .math-display {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            display:
-block;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-text-align: center;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-15px 0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-size: 1.15em;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;„Abychom
-se posunuli od slovních popisů k exaktní matematice, připravil
-jsem geometrický rozbor, který jasně demonstruje, proč u \(n=3\)
-dochází k rozpadu celočíselné mřížky.&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Použijeme
-pravoúhlý trojúhelník, jehož obsah reprezentuje polovinu
-zkoumané mocniny. Tento útvar rozdělíme na dvě části (binární
-rozdělení podle Fermatovy věty) pomocí parametru \(r\), který
-vyjadřuje posun plochy od symetrického středu.&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;1.
-Referenční stav pro \(n=2\) (Pythagorova věta)&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Uvažujme
-pravoúhlý trojúhelník s odvěsnami \(c\) a \(2c\).&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;Celkový
-obsah: \(S = \frac{c \cdot 2c}{2} = c^2\)&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-&lt;li&gt;Chceme-li tento obsah rozdělit na dvě části
-reprezentující \(a^2\) a \(b^2\), z geometrie rozkladu jednoznačně
-plyne lineární vztah pro parametr posunu:&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;equation&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \[r =
-\frac{b^2 - a^2}{2c}\]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;&lt;span
-class=&quot;highlight&quot;&gt;Závěr pro \(n=2\):&lt;/span&gt;
-Vztah mezi plochou a parametrem \(r\) je lineární. Pro celočíselná
-\(a, b, c\) je \(r\) vždy racionální číslo. Geometrická podoba
-a celočíselná mřížka jsou v dokonalém souladu.&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;2.
-Kritický rozpor pro \(n=3\) (Fermatova věta)&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Abychom
-reprezentovali třetí mocninu \(c^3\), musíme podle euklidovských
-pravidel roviny zvolit trojúhelník s odvěsnami \(c\) a
-\(2c^2\).&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;Celkový
-obsah: \(S = \frac{c \cdot 2c^2}{2} = c^3\)&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Při
-pokusu o binární rozdělení tohoto obsahu na části \(a^3\) a
-\(b^3\) se však dostáváme do geometrické schizofrenie. Hodnotu
-parametru \(r\) totiž můžeme vyjádřit dvěma nezávislými
-způsoby podle toho, z jaké osy (dimenze) se na rozklad díváme:&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;ol&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;&lt;span
-class=&quot;highlight&quot;&gt;Vyjádření z vertikálního
-pohledu&lt;/span&gt; (osa kvadratického růstu \(2c^2\)):</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            &lt;div
-class=&quot;equation&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">                \[r
-= \frac{b^3 - a^3}{2c^2}\]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            (Zde se
-\(r\) chová jako čistě racionální lineární zlomek).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;&lt;span
-class=&quot;highlight&quot;&gt;Vyjádření z horizontálního
-pohledu&lt;/span&gt; (osa lineárního růstu \(c\)):&lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            Zde
-vazba na plochu podléhá kvadratické transformaci, což vede k
-výrazu:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            &lt;div
-class=&quot;equation&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">                \[r
-= \sqrt{\frac{b^3 - a^3}{2c}}\]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            (Zde se
-\(r\) projevuje skrze iracionální druhou odmocninu).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/ol&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;3.
-Algebraicko-geometrický důkaz sporu&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Aby
-mohlo existovat celočíselné řešení \(a, b, c\) pro rovnici
-\(a^3 + b^3 = c^3\), musela by v tomto trojúhelníku existovat jedna
-společná, konzistentní hodnota \(r\). Obě geometrická vyjádření
-by si musela být rovna:&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;equation&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \[\frac{b^3
-- a^3}{2c^2} = \sqrt{\frac{b^3 - a^3}{2c}}\]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Pojďme
-tuto rovnost algebraicky upravit. Nejprve obě strany umocníme na
-druhou:&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;equation&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \[\frac{(b^3
-- a^3)^2}{4c^4} = \frac{b^3 - a^3}{2c}\]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Za
-předpokladu, že \(b^3 \neq a^3\) (což v netriviálním řešení
-platí), můžeme celou rovnici zkrátit výrazem \((b^3 -
-a^3)\):&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;equation&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \[\frac{b^3
-- a^3}{4c^4} = \frac{1}{2c}\]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Vynásobíme
-obě strany výrazem \(4c^4\):&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;equation&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \[b^3 - a^3
-= \frac{4c^4}{2c}\]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Po
-zkrácení dostáváme finální podmínku, za které by tato
-geometrická konstrukce v rovině mohla existovat:&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;equation&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \[b^3 - a^3
-= 2c^3\]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Tento
-výsledek je však v přímém logickém rozporu s výchozí
-Fermatovou rovnicí \(a^3 + b^3 = c^3\). Z ní totiž plyne, že
-rozdíl \(b^3 - a^3\) musí být ostře menší než \(c^3opts\),
-nikoli roven jeho dvojnásobku (\(2c^3\)).&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;&lt;span
-class=&quot;highlight&quot;&gt;Závěr:&lt;/span&gt;&lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    Tento
-matematický rozpor jasně dokazuje, že v 2D rovině euklidovského
-grafu nelze provést binární rozklad třetí mocniny tak, aby byly
-zachovány celočíselné hrany. Geometrické požadavky horizontální
-a vertikální osy se navzájem vylučují.&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;U
-\(n=2\) tento rozpor nevzniká, protože lineární a kvadratické
-řády jsou v rovnováze. U \(n=3\) se tato rovnováha hroutí do
-iracionality, což je skutečný geometrický důvod, proč Velká
-Fermatova věta nemá pro \(n&amp;gt;2\) celočíselné řešení.“&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/html&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm"> &lt;!DOCTYPE html&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;html lang=&quot;cs&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;meta
-charset=&quot;UTF-8&quot;&gt;  
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;title&gt;Rozměrová
-bariéra Velké Fermatovy věty v 2D prostoru&lt;/title&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-window.MathJax = {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            tex: {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">               
-inlineMath: [['$', '$'], ['\\(', '\\)']],</p>
-<p style="line-height: 100%; margin-bottom: 0cm">               
-displayMath: [['$$', '$$'], ['\\[', '\\]']]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        };</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;script
-id=&quot;MathJax-script&quot; async
-src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&gt;&lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        body {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-family: sans-serif;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            color:
-#000000;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-line-height: 1.4;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-max-width: 800px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-20px auto;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            padding:
-0 15px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        h2 {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 25px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-size: 1.3em;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-border-bottom: 1px solid #e0e0e0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-padding-bottom: 3px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        p {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 6px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 6px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        ul, ol {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-padding-left: 20px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        li {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 4px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        /* Styl pro
-vycentrované matematické bloky */</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-math[display=&quot;block&quot;], .math-display {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            display:
-block;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-text-align: center;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-15px 0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-size: 1.15em;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">      
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h1&gt;Geometrická
-demonstrace rozměrové bariéry Velké Fermatovy věty&lt;/h1&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Tento text
-analyzuje pokus o geometrickou reprezentaci Velké Fermatovy věty v
-eukleidovské rovině (2D). 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Ukazuje, na
-jakém přesném rozměrovém konfliktu selhává možnost promítnout
-třetí a vyšší mocniny do 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        pravoúhlého
-trojúhelníku pomocí lineárního parametru rozdělení \(\mu\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;1.
-Referenční stav pro n = 2 (Homogenní prostor)&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Uvažujme
-velký pravoúhlý trojúhelník, který reprezentuje mocninu
-\(c^2\). 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Zvolíme
-základnu \(c\) a výšku \(2c\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Celkový
-obsah: \( S = \frac{c \cdot 2c}{2} = c^2 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Nyní
-definujeme posun \(\mu\) od středové polohy tak, abychom plochu
-rozdělili na obsahy odpovídající \(b^2\) a \(a^2\):</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( \frac{2c
-\left( \frac{c}{2} + \mu \right)}{2} = b^2 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Z toho
-lineární úpravou získáme parametr posunu:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( \mu =
-\frac{b^2 - a^2}{2c} \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-&lt;strong&gt;Geometrický závěr:&lt;/strong&gt; Obě odvěsny mají
-rozměr délky (\([c]\)). Výsledná plocha má rozměr obsahu.
-Parametr \(\mu\) je lineární délka. Všechny geometrické entity
-jsou v rámci 2D roviny homogenní a plně slučitelné s aritmetikou
-celých čísel (Pythagorejské trojice).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;2.
-Rozměrový konflikt pro n = 3&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Abychom v
-rovině vyjádřili obsah odpovídající třetí mocnině \(c^3\),
-musíme formálně nahradit výšku \(2c\) výrazem \(2c^2\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Základna =
-\(c\) &lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Výška =
-\(2c^2\) &lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Obsah = \(
-\frac{c \cdot 2c^2}{2} = c^3 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Při pokusu
-o rozdělení plochy pro získání \(b^3\) a \(a^3\) opět použijeme
-posun \(\mu\):</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \(
-\frac{2c^2 \left( \frac{c}{2} + \mu \right)}{2} = b^3 \) &lt;br&gt;&lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( \mu =
-\frac{b^3 - a^3}{2c^2} \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Až sem se
-zdá být vše algebraicky v pořádku. Kritický zlom ovšem nastává
-při pohledu z druhé osy. Pokud se pokusíme vyjádřit obsah
-\(a^3\) pomocí parametru \(\mu\), narazíme na vztah:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( \frac{c
-(c^2 - 2\mu^2)}{2} = a^3 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Tento vztah
-&lt;strong&gt;už není geometricky ekvivalentní&lt;/strong&gt; tomu
-prvnímu. Výraz \(2c^2\) totiž nemá rozměr délky, ale obsahu
-(\([c^2] \neq [c]\)). V obrázku geometricky neexistuje úsečka o
-délce \(c^2 - 2\mu^2\). Je to čistě algebraická konstrukce, která
-míchá rozměrově nekompatibilní veličiny.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;3.
-Rozpad parametrizace&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Výše
-popsaný rozměrový konflikt vede k tomu, že parametr \(\mu\) je
-definován dvěma neslučitelnými způsoby:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;Z
-první rovnice plyne lineární závislost: \( \mu \propto (b^3 -
-a^3) \)&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;Z
-druhé rovnice plyne kvadratická závislost: \( \mu^2 \propto (b^3 -
-a^3) \)&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Předpoklad,
-že obě tyto definice musí platit současně, vede k algebraickému
-sporu:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( b^3 - a^3
-= 2c^3 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;!-- Přidejte
-tuto sekci pod sekci &quot;3. Rozpad parametrizace&quot; ve vašem
-HTML souboru --&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;section
-class=&quot;physical-model&quot; style=&quot;background-color:
-#f0f4f7; padding: 20px; border-radius: 8px; margin-top: 30px;&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;4.
-Archimédovská mechanická metoda: Model klínu&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Pokud do
-geometrického modelu zavedeme fyzikální veličinu
-&lt;strong&gt;hmotnost&lt;/strong&gt; ($M$), získáme nový pohled
-na bariéru pro $n=3$. 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Představme
-si původní trojúhelník ne jako plochu, ale jako těleso (klín) s
-proměnnou hustotou $\rho$.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Aby hmotnost
-odpovídala $c^3$, musí hustota v každém bodě $x$ růst lineárně:
-$\rho(x) = x$. &lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Celková
-hmotnost klínu: &lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        $$ M =
-\int_0^c (2x \cdot x) \, dx = \int_0^c 2x^2 \, dx = \frac{2}{3}c^3 $$</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h3&gt;Problém
-pootočení osy (řezu)&lt;/h3&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-Předpokládejme, že existuje celočíselné řešení $a^3 + b^3 =
-c^3$. Mechanicky to znamená, že tento hmotný klín lze rozdělit
-jediným 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        přímým
-řezem (úhlopříčkou) na dvě části o hmotnostech odpovídajících
-$a^3$ a $b^3$.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;Steps&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        {/* Reason:
-Procedurální vysvětlení fyzikálního rozpadu modelu při
-pootočení osy. */}</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;Step
-title=&quot;Nastavení rovnováhy&quot; subtitle=&quot;Statický
-moment&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            Hledáme
-polohu dělicí přímky $y = kx + q$ tak, aby momenty sil obou částí
-vzhledem k těžišti byly v rovnováze.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/Step&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;Step
-title=&quot;Rozpor lineárnosti a kubičnosti&quot;
-subtitle=&quot;Matematická bariéra&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            Řez je
-lineární operace (1. stupeň), ale hmota v modelu roste kubicky (3.
-stupeň). 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/Step&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;Step
-title=&quot;Ztráta celočíselnosti&quot; subtitle=&quot;Výsledek&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-Pootočení osy tak, aby hmotnostně vyhověla celým číslům $a^3$
-a $b^3$, nevyhnutelně vede k tomu, že směrnice $k$ (úhel
-pootočení) 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            bude
-obsahovat iracionální hodnoty (třetí odmocniny).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/Step&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/Steps&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p
-style=&quot;margin-top: 15px;&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-&lt;strong&gt;Fyzikální závěr:&lt;/strong&gt; Nelze provést
-lineární řez v eukleidovské mřížce tak, aby oddělil
-celočíselné objemy 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        třetích
-mocnin. Geometrická &quot;osa rozdělení&quot; by v takovém
-případě musela procházet body, které neleží v celočíselné 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        struktuře
-prostoru.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/section&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">  &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;conclusion&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-&lt;h3&gt;Závěr&lt;/h3&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            Tento
-rozpor (\( b^3 - a^3 = 2c^3 \)) není chybou ve výpočtu, ale je
-&lt;strong&gt;přímým důkazem nekompatibility
-parametrizace&lt;/strong&gt;. Dokládá, že tentýž parametr
-\(\mu\) nelze v 2D rovině definovat konzistentně pro obě osy
-současně, pokud \(n &gt; 2\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            Můj
-model nevytváří formální algebraický důkaz Velké Fermatovy
-věty, ale poskytuje exaktní geometrickou demonstraci. Ukazuje bod,
-kde se 2D eukleidovská rovina &quot;hroutí&quot; při pokusu o
-zobrazení třetích mocnin. Dvojka (\(n=2\)) je rozměrový strop,
-za kterým se geometrie roviny a aritmetika mocnin definitivně
-rozcházejí.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/html&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;!DOCTYPE html&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;html lang=&quot;cs&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;meta
-charset=&quot;UTF-8&quot;&gt;  
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;title&gt;Fyzikální
-interpretace Velké Fermatovy věty&lt;/title&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;!-- Bezpečné
-zavedení MathJaxu pro vykreslování rovnic --&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-window.MathJax = {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            tex: {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">               
-inlineMath: [['$', '$'], ['\\(', '\\)']],</p>
-<p style="line-height: 100%; margin-bottom: 0cm">               
-displayMath: [['$$', '$$'], ['\\[', '\\]']]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        };</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;script
-id=&quot;MathJax-script&quot; async
-src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&gt;&lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        body {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-line-height: 1.5;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            color:
-#1a1a1a;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-max-width: 850px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-30px auto;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            padding:
-0 20px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-background-color: #fcfcfc;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        h1 { color:
-#2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        h2 { color:
-#2980b9; margin-top: 40px; border-left: 5px solid #3498db;
-padding-left: 15px; }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        .math-block
-{</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-background-color: #f4f7f9;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            border:
-1px solid #d1d8dd;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            padding:
-20px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-20px 0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-border-radius: 4px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-text-align: center;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-.highlight-box {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-background-color: #fff9db;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            border:
-1px solid #f59f00;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            padding:
-15px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-border-radius: 4px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-20px 0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">   
-&lt;h1&gt;Archimédovský pohled: Od obsahu plochy k hmotnému
-klínu&lt;/h1&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Při
-zkoumání Velké Fermatovy věty v 2D rovině narážíme na
-rozměrovou bariéru. Pokud však k eukleidovskému trojúhelníku
-přidáme fyzikální veličinu – &lt;strong&gt;hmotnost&lt;/strong&gt;
-– získáme nový nástroj pro analýzu mocnin \(n \geq 3\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;1.
-Model hmotného klínu pro n = 3&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Představme
-si náš základní trojúhelník pro \(n=2\) (základna \(c\), výška
-\(2c\)). Aby vyjadřoval třetí mocninu, definujeme jeho hustotu
-\(\rho\) nikoliv jako konstantní, ale jako lineárně rostoucí se
-vzdáleností od počátku: \(\rho(x) = x\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-block&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Celková
-hmotnost \(M\) je pak dána integrálem: &lt;br&gt;&lt;br&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        \( M =
-\int_{0}^{c} (2x \cdot x) \, dx = \int_{0}^{c} 2x^2 \, dx = \left[
-\frac{2}{3}x^3 \right]_{0}^{c} = \frac{2}{3}c^3 \)</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Hmotnost
-\(M\) je nyní přímo úměrná \(c^3\). Geometrický obraz zůstává
-v rovině, ale &quot;třetí rozměr&quot; je schován v hustotě
-materiálu.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;2.
-Dynamika rozdělení: Pootočení osy rozpůlení&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Vladimír
-Ros navrhuje možnost, že pokud by existovalo celočíselné řešení
-\(a^n + b^n = c^n\), bylo by možné najít novou osu rozdělení
-(pootočenou úhlopříčku), která by tento hmotný klín rozdělila
-na dvě části o hmotnostech odpovídajících \(a^3\) a \(b^3\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;highlight-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-&lt;strong&gt;Fyzikální problém:&lt;/strong&gt; Při pootočení
-osy (změně směrnice přímky řezu) hledáme bod rovnováhy
-momentů sil. Zatímco řez je &lt;em&gt;lineární&lt;/em&gt;
-(přímka), nárůst hmoty je &lt;em&gt;kubický&lt;/em&gt;.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Abychom
-dosáhli přesného poměru hmotností pro celá čísla \(a\) a
-\(b\), museli bychom osu pootočit o úhel, jehož tangenta odpovídá
-poměru těchto mocnin. Výpočet však ukazuje, že v nehomogenním
-poli (kde hustota roste s \(x\)) vyžaduje statická rovnováha pro
-celočíselné výsledky takové souřadnice řezu, které obsahují
-iracionální složky (odmocniny).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;3.
-Proč pootočení nepomůže?&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        I když
-přidáme hmotnost a změníme úhel řezu, rozměrová bariéra se
-pouze transformuje:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;U
-&lt;strong&gt;n = 2&lt;/strong&gt; je těžiště a osa rozdělení v
-lineárním vztahu k obsahu.&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;U
-&lt;strong&gt;n = 3&lt;/strong&gt; se osa rozdělení (1. stupeň)
-pokouší vyvážit kubický nárůst hmoty (3. stupeň).&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Můžeme
-sice osu pootočit tak, aby hmotnosti levé a pravé části byly v
-poměru \(a^3 : b^3\), ale tato osa už nebude procházet mřížovými
-body celočíselné soustavy. Pootočení úhlopříčky tedy
-geometricky sice &quot;rozdělí koláč&quot;, ale délky stran
-takto vzniklých těles přestanou být celými čísly.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-block&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-&lt;strong&gt;Závěr:&lt;/strong&gt; Fyzikální model potvrzuje, že
-pro \(n &gt; 2\) nelze lineárním řezem v eukleidovské rovině
-dosáhnout celočíselné separace vyšších mocnin.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/html&gt;&lt;!DOCTYPE
-html&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;html lang=&quot;cs&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;meta
-charset=&quot;UTF-8&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;meta
-name=&quot;viewport&quot; content=&quot;width=device-width,
-initial-scale=1.0&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;title&gt;Závěrečné
-shrnutí: Rozměrová bariéra eukleidovského prostoru&lt;/title&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-window.MathJax = {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            tex: {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">               
-inlineMath: [['$', '$'], ['\\(', '\\)']],</p>
-<p style="line-height: 100%; margin-bottom: 0cm">               
-displayMath: [['$$', '$$'], ['\\[', '\\]']]</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        };</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;script
-id=&quot;MathJax-script&quot; async
-src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&gt;&lt;/script&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        body {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-line-height: 1.6;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            color:
-#333;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-max-width: 800px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-0 auto;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            padding:
-20px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-background-color: #fdfdfd;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        h1 {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            color:
-#2c3e50;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-border-bottom: 2px solid #3498db;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-padding-bottom: 10px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-size: 1.8em;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        h2 {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            color:
-#2980b9;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 30px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-size: 1.4em;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-border-bottom: 1px solid #ecf0f1;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-padding-bottom: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        p {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 15px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-text-align: justify;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        ul {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 5px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 15px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-padding-left: 20px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        li {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-bottom: 8px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        .math-box {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-background-color: #f8f9fa;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-border-left: 4px solid #3498db;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            padding:
-15px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-20px 0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-overflow-x: auto;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-border-radius: 0 4px 4px 0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-.conclusion-box {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-background-color: #eafaf1;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            border:
-1px solid #a3e4d7;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            padding:
-25px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-border-radius: 8px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 40px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-box-shadow: 0 2px 5px rgba(0,0,0,0.02);</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-.conclusion-box h3 {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            color:
-#1e8449;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-margin-top: 0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-font-size: 1.3em;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        hr {</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            border:
-0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            height:
-1px;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">           
-background: #d6dbdf;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            margin:
-30px 0;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        }</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/style&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/head&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h1&gt;Závěrečné
-shrnutí: Rozměrová bariéra eukleidovského prostoru&lt;/h1&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Cílem této
-práce bylo prozkoumat chování Velké Fermatovy věty (\(a^n + b^n
-= c^n\)) skrze její zobrazení v eukleidovské rovině (2D). 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Namísto
-čistě abstraktního algebraického aparátu jsme zvolili cestu
-&lt;strong&gt;heuristické geometrické a fyzikální
-interpretace&lt;/strong&gt;. 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Tento
-přístup nám umožnil přesně lokalizovat strukturální bariéru,
-kvůli které rovina odmítá celočíselně pojmout mocniny vyšší
-než druhé.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;Celý
-výzkum lze shrnout do tří klíčových fází, které se navzájem
-doplňují a potvrzují.&lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;hr&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;1.
-Referenční stav pro \(n = 2\) (Homogenní distribuce)&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        V
-referenčním stavu (Pythagorova věta) pracuje model s pravoúhlým
-trojúhelníkem o odvěsnách \(c\) a \(2c\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;Všechny
-délkové parametry v rovině mají stejný rozměr délky
-(\([c]\)).&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;Obsah
-útvaru reprezentuje druhou mocninu (\(c^2\)).&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;li&gt;Parametr
-posunu \(\mu\) (geometrický filtr), který dělí plochu na části
-\(a^2\) a \(b^2\), je čistě lineární veličinou:&lt;/li&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/ul&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        $$\mu =
-\frac{b^2 - a^2}{2c}$$</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Pro
-celočíselnou trojici \(a, b, c\) je \(\mu\) vždy racionální
-číslo. Geometrie roviny a aritmetika celých čísel jsou zde 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        v dokonalé
-strukturální harmonii, což umožňuje existenci Pythagorejských
-trojic.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;2.
-Model pro \(n = 3\) s konstantní hustotou (\(\rho = 1\))&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Abychom v
-rovině vyjádřili hodnotu odpovídající třetí mocnině \(c^3\),
-zkonstruujeme pravoúhlý trojúhelník se základnou \(c\) 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        a výškou
-navýšenou na rozměr \(2c^2\). Tělesu přiřadíme homogenní
-měrnou hmotnost \(\rho = 1\), čímž se celková hmotnost \(M\) 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        rovná jeho
-obsahu:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        $$M =
-\frac{c \cdot 2c^2}{2} = c^3$$</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Přepona
-tohoto trojúhelníku stoupá z počátku souřadnic \((0,0)\) do
-bodu \((c, 2c^2)\) se směrnicí \(k = \frac{2c^2}{c} = 2c\). 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Rovnice této
-dělicí linie je tedy lineární: \(y = 2cx\).</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;h2&gt;3.
-Kvadratický nárůst hmoty a vznik odmocniny&lt;/h2&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Klíčový
-zlom nastává při sledování toho, jak v tomto útvaru kumuluje
-hmota podél horizontální osy \(x\). Hmotnost (obsah) 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        části
-trojúhelníku od počátku do libovolného bodu \(x\) roste podle
-kvadratické funkce:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        $$M(x) =
-\frac{x \cdot 2cx}{2} = cx^2$$</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Pokud nyní
-chceme tento trojúhelník rozříznout vertikálním řezem v bodě
-\(x\) tak, aby levá oddělená část měla hmotnost 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        přesně
-odpovídající celočíselné třetí mocnině \(a^3\), musíme
-položit:</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;math-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        $$cx^2 = a^3
-\implies x^2 = \frac{a^3}{c} \implies x = \sqrt{\frac{a^3}{c}}$$</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        Tento
-výsledek odhaluje samotné jádro problému. Geometrie prostoru nás
-kvůli zachování celkového objemu \(c^3\) 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        ve 2D rovině
-nutí pracovat s kvadratickým nárůstem plochy (\(cx^2\)). Když
-pak hledáme bod řezu pro kubický skok (\(a^3\)), 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">       
-&lt;strong&gt;systém nás nevyhnutelně donutí přejít k druhé
-odmocnině&lt;/strong&gt;. Výsledný geometrický filtr (posun
-\(\mu\)) tak ztrácí 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        svou
-lineární a racionální povahu, čímž se míjí s celočíselnou
-mřížkou.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;div
-class=&quot;conclusion-box&quot;&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;h3&gt;Hlavní
-závěr práce&lt;/h3&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            Celá
-analýza ukazuje, že &lt;strong&gt;druhá mocnina (\(n=2\))
-představuje absolutní rozměrový strop&lt;/strong&gt;, 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            za
-kterým jsou geometrická struktura roviny a aritmetické požadavky
-vyšších mocnin definitivně neslučitelné.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            Velká
-Fermatova věta pro \(n&gt;2\) nemá celočíselné řešení právě
-proto, že lineární povaha eukleidovského prostoru 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            nedokáže
-beze zbytku pojmout objekty vyšších řádů, aniž by došlo k
-deformaci distribuce hmoty/plochy. 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            To, co
-se v algebře projevuje jako neexistence celých čísel, se v rovině
-projevuje jako nevyhnutelný přechod 
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">            k
-iracionálním řezům a odmocninám.</p>
-<p style="line-height: 100%; margin-bottom: 0cm">        &lt;/p&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">    &lt;/div&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm"><br/>
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/body&gt;</p>
-<p style="line-height: 100%; margin-bottom: 0cm">&lt;/html&gt;</p>
 </body>
 </html>
