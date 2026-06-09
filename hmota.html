@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">  
+    <title>Fyzikální interpretace Velké Fermatovy věty</title>
+    
+    <!-- Bezpečné zavedení MathJaxu pro vykreslování rovnic -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #1a1a1a;
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 20px;
+            background-color: #fcfcfc;
+        }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #2980b9; margin-top: 40px; border-left: 5px solid #3498db; padding-left: 15px; }
+        .math-block {
+            background-color: #f4f7f9;
+            border: 1px solid #d1d8dd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .highlight-box {
+            background-color: #fff9db;
+            border: 1px solid #f59f00;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Archimédovský pohled: Od obsahu plochy k hmotnému klínu</h1>
+    
+    <p>
+        Při zkoumání Velké Fermatovy věty v 2D rovině narážíme na rozměrovou bariéru. Pokud však k eukleidovskému trojúhelníku přidáme fyzikální veličinu – <strong>hmotnost</strong> – získáme nový nástroj pro analýzu mocnin \(n \geq 3\).
+    </p>
+
+    <h2>1. Model hmotného klínu pro n = 3</h2>
+    <p>
+        Představme si náš základní trojúhelník pro \(n=2\) (základna \(c\), výška \(2c\)). Aby vyjadřoval třetí mocninu, definujeme jeho hustotu \(\rho\) nikoliv jako konstantní, ale jako lineárně rostoucí se vzdáleností od počátku: \(\rho(x) = x\).
+    </p>
+    
+    <div class="math-block">
+        Celková hmotnost \(M\) je pak dána integrálem: <br><br>
+        \( M = \int_{0}^{c} (2x \cdot x) \, dx = \int_{0}^{c} 2x^2 \, dx = \left[ \frac{2}{3}x^3 \right]_{0}^{c} = \frac{2}{3}c^3 \)
+    </div>
+
+    <p>
+        Hmotnost \(M\) je nyní přímo úměrná \(c^3\). Geometrický obraz zůstává v rovině, ale "třetí rozměr" je schován v hustotě materiálu.
+    </p>
+
+    <h2>2. Dynamika rozdělení: Pootočení osy rozpůlení</h2>
+    <p>
+        Vladimír Ros navrhuje možnost, že pokud by existovalo celočíselné řešení \(a^n + b^n = c^n\), bylo by možné najít novou osu rozdělení (pootočenou úhlopříčku), která by tento hmotný klín rozdělila na dvě části o hmotnostech odpovídajících \(a^3\) a \(b^3\).
+    </p>
+
+    <div class="highlight-box">
+        <strong>Fyzikální problém:</strong> Při pootočení osy (změně směrnice přímky řezu) hledáme bod rovnováhy momentů sil. Zatímco řez je <em>lineární</em> (přímka), nárůst hmoty je <em>kubický</em>.
+    </div>
+
+    <p>
+        Abychom dosáhli přesného poměru hmotností pro celá čísla \(a\) a \(b\), museli bychom osu pootočit o úhel, jehož tangenta odpovídá poměru těchto mocnin. Výpočet však ukazuje, že v nehomogenním poli (kde hustota roste s \(x\)) vyžaduje statická rovnováha pro celočíselné výsledky takové souřadnice řezu, které obsahují iracionální složky (odmocniny).
+    </p>
+
+    <h2>3. Proč pootočení nepomůže?</h2>
+    <p>
+        I když přidáme hmotnost a změníme úhel řezu, rozměrová bariéra se pouze transformuje:
+    </p>
+    <ul>
+        <li>U <strong>n = 2</strong> je těžiště a osa rozdělení v lineárním vztahu k obsahu.</li>
+        <li>U <strong>n = 3</strong> se osa rozdělení (1. stupeň) pokouší vyvážit kubický nárůst hmoty (3. stupeň).</li>
+    </ul>
+    
+    <p>
+        Můžeme sice osu pootočit tak, aby hmotnosti levé a pravé části byly v poměru \(a^3 : b^3\), ale tato osa už nebude procházet mřížovými body celočíselné soustavy. Pootočení úhlopříčky tedy geometricky sice "rozdělí koláč", ale délky stran takto vzniklých těles přestanou být celými čísly.
+    </p>
+
+    <div class="math-block">
+        <strong>Závěr:</strong> Fyzikální model potvrzuje, že pro \(n > 2\) nelze lineárním řezem v eukleidovské rovině dosáhnout celočíselné separace vyšších mocnin.
+    </div>
+
+</body>
+</html>
