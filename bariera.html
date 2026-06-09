@@ -1,0 +1,141 @@
+
+ <!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">  
+    <title>Rozměrová bariéra Velké Fermatovy věty v 2D prostoru</title>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            color: #000000;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        h2 {
+            margin-top: 25px;
+            margin-bottom: 5px;
+            font-size: 1.3em;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 3px;
+        }
+        p {
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+        ul, ol {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        /* Styl pro vycentrované matematické bloky */
+        math[display="block"], .math-display {
+            display: block;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.15em;
+        }
+    </style>
+</head>
+      
+<body>
+
+    <h1>Geometrická demonstrace rozměrové bariéry Velké Fermatovy věty</h1>
+    <p>
+        Tento text analyzuje pokus o geometrickou reprezentaci Velké Fermatovy věty v eukleidovské rovině (2D). 
+        Ukazuje, na jakém přesném rozměrovém konfliktu selhává možnost promítnout třetí a vyšší mocniny do 
+        pravoúhlého trojúhelníku pomocí lineárního parametru rozdělení \(\mu\).
+    </p>
+
+    <h2>1. Referenční stav pro n = 2 (Homogenní prostor)</h2>
+    <p>
+        Uvažujme velký pravoúhlý trojúhelník, který reprezentuje mocninu \(c^2\). 
+        Zvolíme základnu \(c\) a výšku \(2c\).
+    </p>
+    <div class="math-box">
+        Celkový obsah: \( S = \frac{c \cdot 2c}{2} = c^2 \)
+    </div>
+    <p>
+        Nyní definujeme posun \(\mu\) od středové polohy tak, abychom plochu rozdělili na obsahy odpovídající \(b^2\) a \(a^2\):
+    </p>
+    <div class="math-box">
+        \( \frac{2c \left( \frac{c}{2} + \mu \right)}{2} = b^2 \)
+    </div>
+    <p>
+        Z toho lineární úpravou získáme parametr posunu:
+    </p>
+    <div class="math-box">
+        \( \mu = \frac{b^2 - a^2}{2c} \)
+    </div>
+    <p>
+        <strong>Geometrický závěr:</strong> Obě odvěsny mají rozměr délky (\([c]\)). Výsledná plocha má rozměr obsahu. Parametr \(\mu\) je lineární délka. Všechny geometrické entity jsou v rámci 2D roviny homogenní a plně slučitelné s aritmetikou celých čísel (Pythagorejské trojice).
+    </p>
+
+    <h2>2. Rozměrový konflikt pro n = 3</h2>
+    <p>
+        Abychom v rovině vyjádřili obsah odpovídající třetí mocnině \(c^3\), musíme formálně nahradit výšku \(2c\) výrazem \(2c^2\).
+    </p>
+    <div class="math-box">
+        Základna = \(c\) <br>
+        Výška = \(2c^2\) <br>
+        Obsah = \( \frac{c \cdot 2c^2}{2} = c^3 \)
+    </div>
+    <p>
+        Při pokusu o rozdělení plochy pro získání \(b^3\) a \(a^3\) opět použijeme posun \(\mu\):
+    </p>
+    <div class="math-box">
+        \( \frac{2c^2 \left( \frac{c}{2} + \mu \right)}{2} = b^3 \) <br><br>
+        \( \mu = \frac{b^3 - a^3}{2c^2} \)
+    </div>
+    <p>
+        Až sem se zdá být vše algebraicky v pořádku. Kritický zlom ovšem nastává při pohledu z druhé osy. Pokud se pokusíme vyjádřit obsah \(a^3\) pomocí parametru \(\mu\), narazíme na vztah:
+    </p>
+    <div class="math-box">
+        \( \frac{c (c^2 - 2\mu^2)}{2} = a^3 \)
+    </div>
+    <p>
+        Tento vztah <strong>už není geometricky ekvivalentní</strong> tomu prvnímu. Výraz \(2c^2\) totiž nemá rozměr délky, ale obsahu (\([c^2] \neq [c]\)). V obrázku geometricky neexistuje úsečka o délce \(c^2 - 2\mu^2\). Je to čistě algebraická konstrukce, která míchá rozměrově nekompatibilní veličiny.
+    </p>
+
+    <h2>3. Rozpad parametrizace</h2>
+    <p>
+        Výše popsaný rozměrový konflikt vede k tomu, že parametr \(\mu\) je definován dvěma neslučitelnými způsoby:
+    </p>
+    <ul>
+        <li>Z první rovnice plyne lineární závislost: \( \mu \propto (b^3 - a^3) \)</li>
+        <li>Z druhé rovnice plyne kvadratická závislost: \( \mu^2 \propto (b^3 - a^3) \)</li>
+    </ul>
+    <p>
+        Předpoklad, že obě tyto definice musí platit současně, vede k algebraickému sporu:
+    </p>
+    <div class="math-box">
+        \( b^3 - a^3 = 2c^3 \)
+    </div>
+
+    <div class="conclusion">
+        <h3>Závěr</h3>
+        <p>
+            Tento rozpor (\( b^3 - a^3 = 2c^3 \)) není chybou ve výpočtu, ale je <strong>přímým důkazem nekompatibility parametrizace</strong>. Dokládá, že tentýž parametr \(\mu\) nelze v 2D rovině definovat konzistentně pro obě osy současně, pokud \(n > 2\).
+        </p>
+        <p>
+            Můj model nevytváří formální algebraický důkaz Velké Fermatovy věty, ale poskytuje exaktní geometrickou demonstraci. Ukazuje bod, kde se 2D eukleidovská rovina "hroutí" při pokusu o zobrazení třetích mocnin. Dvojka (\(n=2\)) je rozměrový strop, za kterým se geometrie roviny a aritmetika mocnin definitivně rozcházejí.
+        </p>
+    </div>
+
+</body>
+</html>
